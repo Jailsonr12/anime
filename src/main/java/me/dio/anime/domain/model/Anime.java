@@ -1,5 +1,6 @@
 package me.dio.anime.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -26,7 +27,8 @@ public class Anime {
     @OneToOne(cascade = CascadeType.ALL)
     private Duration duration;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @JsonIgnoreProperties({"anime"})
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Genre> genres;
 
     private String contentRating;

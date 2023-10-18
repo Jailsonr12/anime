@@ -6,6 +6,8 @@ import me.dio.anime.domain.repository.AnimeRepository;
 import me.dio.anime.service.AnimeService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AnimeServiceImpl implements AnimeService {
 
@@ -23,5 +25,10 @@ public class AnimeServiceImpl implements AnimeService {
     @Override
     public Anime create(Anime animeToCreate) {
         return animeRepository.save(animeToCreate);
+    }
+
+    @Override
+    public List<Anime> findAll() {
+        return animeRepository.findAll();
     }
 }
