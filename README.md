@@ -14,7 +14,7 @@ Esta é a RESTful API da Santander Dev Week 2023, construída em Java 17 com o S
 
 - **Railway**: Nossa solução facilita o deploy e monitoramento na nuvem, oferecendo diversos bancos de dados como serviço e pipelines de CI/CD. **(Nossa API não foi implantada ainda, pois requer a verificação do perfil do Git no Railway)**.
 
-- **Maven**: Uma ferramenta de automação e gerenciamento de projetos Java, embora também possa ser utilizada com outras linguagens.
+- **Maven**: Uma ferramenta de automação e gerenciamento de projetos Java
 
 ## Diagrama de Classes (Domínio da API)
 
