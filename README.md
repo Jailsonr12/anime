@@ -13,59 +13,36 @@ RESTful API da Santander Dev Week 2023 construída em Java 17 com Spring Boot 3,
 
 ```mermaid
 classDiagram
-    class Anime {
-        -name: String
-        -image: String
-        -description: String
-        -author: String
-    }
-    
-    class Duration {
-        -season: String
-        -episodes: int
-    }
-    
-    class AnimeGenre {
-        -genres: String[]
-    }
-    
-    class ContentRating {
-        -rating: String
-    }
-    
-    class AverageRating {
-        -rating: float
-    }
-    
-    class ReleaseDate {
-        -startDate: String
-        -endDate: String
-    }
-    
-    class AnimationStudio {
-        -studioName: String
-    }
-    
-    class Director {
-        -directorName: String
-    }
-    
-    class OriginalMangaStudio {
-        -originalStudioName: String
-    }
-    
-    class AnimeTrailer {
-        -trailerURL: String
-    }
-    
-    Anime -- Duration
-    Anime -- AnimeGenre
-    Anime -- ContentRating
-    Anime -- AverageRating
-    Anime -- ReleaseDate
-    Anime -- AnimationStudio
-    Anime -- Director
-    Anime -- OriginalMangaStudio
-    Anime -- AnimeTrailer
+  class Anime {
+    - name: String
+    - image: String
+    - description: String
+    - author: String
+    - duration: Duration
+    - genres: Genre[]
+    - contentRating: String
+    - averageRating: float
+    - releaseDate: ReleaseDate
+    - animationStudio: String
+    - originalMangaStudio: String
+    - trailerURL: String
+  }
 
+  class Duration {
+    - season: String
+    - episodes: int
+  }
+
+  class Genre {
+    - name: String
+  }
+
+  class ReleaseDate {
+    - startDate: String
+    - endDate: String
+  }
+
+  Anime *-- Genre : has
+  Anime --|> Duration
+  Anime --|> ReleaseDate
 ```
